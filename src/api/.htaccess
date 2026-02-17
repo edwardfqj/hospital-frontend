@@ -1,0 +1,14 @@
+# Habilitar CORS para todas las respuestas
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE, PATCH"
+Header always set Access-Control-Allow-Headers "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Origin, Accept"
+Header always set Access-Control-Allow-Credentials true
+
+# Manejar peticiones OPTIONS preflight
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ - [R=200,L]
+
+# Configuración PHP
+php_flag display_errors off
+php_value error_reporting E_ALL & ~E_DEPRECATED & ~E_STRICT

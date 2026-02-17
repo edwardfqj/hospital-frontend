@@ -1,0 +1,1 @@
+﻿{"/api/": {"target": "http://localhost/api", "secure": false, "changeOrigin": true, "logLevel": "debug"}}
